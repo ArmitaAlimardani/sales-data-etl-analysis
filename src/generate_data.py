@@ -50,7 +50,20 @@ def generate_dataset():
 
 
 def save_to_csv(orders):
-    dataframe = pd.DataFrame(orders)
+    dataframe = pd.DataFrame(
+    orders,
+    columns=[
+        "order_id",
+        "order_date",
+        "customer_name",
+        "city",
+        "category",
+        "product",
+        "quantity",
+        "unit_price",
+        "total_price"
+    ]
+)
     dataframe.to_csv(
         "data/raw/sales_data.csv",
         index=False
